@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example 3</title>
+	<script type="text/javascript" src="../knockout-3.1.0.js"></script>
+</head>
+<body>
+	
+	<p>
+		var line = new OrderLine();</br>
+		line.subTotal();</br>
+		line.subTotal();       doesn't call actual function again bcz KO knows nothing has changed</br>
+		line.quantity(3);</br>
+		line.subTotal();</br>
+		line.taxRate(2.5); only affects subtotal after tax</br>
+	</p>
+
+	<script type="text/javascript" src="example1.js"></script>
+</body>
+</html>
