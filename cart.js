@@ -41,7 +41,7 @@ function AppViewModel () {
 	self.grandTotal=ko.computed(function() {
 		console.log('EVALUATING GRAND TOTAL');
 		var total=0;
-		ko.utils.arrayForEach(self.lines, function (line) {
+		ko.utils.arrayForEach(self.lines(), function (line) {
             total +=line.subTotal();
         });
 		return total;
