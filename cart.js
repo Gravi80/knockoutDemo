@@ -24,9 +24,18 @@ function AppViewModel () {
 	};
 
 	self.removeLine=function(line) {
+		console.log(line);
 		self.lines.remove(line);
 	};
 
+	self.grandTotal=ko.computed(function() {
+		console.log('EVALUATING GRAND TOTAL');
+		var total=0;
+		ko.utils.arrayForEach(self.lines, function (line) {
+            total +=line.subTotal();
+        });
+		return total;
+	},self);
 }
 
 //need to tell KO to display a user interface based on this data

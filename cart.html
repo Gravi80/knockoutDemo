@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="cart.js"></script>
 	<script type="text/javascript">
 		var MyApp={};
-		MyApp.AllProducts=[{name:"Moto E",price:6000 },{name:"Nokia Lumia",price:10000 },{name:"Moto G",price:12000 }];
+		MyApp.AllProducts=[{name:"Moto E",price:6343.2345 },{name:"Nokia Lumia",price:13430.345 },{name:"Moto G",price:12322.67689 }];
 	</script>
 </head>
 <body>
@@ -41,6 +41,10 @@
 			</tbody>
 		</table>
 		<div>
+			<p>
+				Grand Total :
+				<strong data-bind="text: grandTotal"></strong>
+			</p>
 			<button data-bind="click: addLine">Add Item</button>
 		</div>
 	</div>
