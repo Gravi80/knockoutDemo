@@ -4,7 +4,7 @@
 function OrderLine () {
 	var self=this;
 	self.product=ko.observable();
-	self.quantity=ko.observable(2);
+	self.quantity=ko.observable(1);
 
 	self.subTotal=ko.computed(function() {
 			console.log('EVALUATING SUBTOTAL');
