@@ -29,7 +29,7 @@
 					<td>
 						<input type="number" min="0" data-bind="value: quantity"/>
 					</td>
-					<td data-bind="text: subTotal"></td>
+					<td data-bind="currencyText: subTotal()"></td>
 					<td>
 						<!-- when we are inside the context of foreach , we are working
 						on an individual line , but removeLine is not defined on a line , 
@@ -43,7 +43,7 @@
 		<div>
 			<p>
 				Grand Total :
-				<strong data-bind="text: grandTotal"></strong>
+				<strong data-bind="currencyText: grandTotal()"></strong>
 			</p>
 			<button data-bind="click: addLine">Add Item</button>
 		</div>

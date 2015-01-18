@@ -1,3 +1,13 @@
+// to Register Custom Binding, create an object on KO bindingHandlers
+ko.bindingHandlers.currencyText={
+	//whenever the associated model value is updated i want this function to be called
+	update: function(element,valueAccessor) {
+		var amount=valueAccessor();
+		var formattedAmount=amount !==null ? '$' + amount.toFixed(2) : '';
+		$(element).text(formattedAmount);
+	}
+}
+
 //A cart has lines
 // A line contain info , which product a person is buying and how much quantity
 
