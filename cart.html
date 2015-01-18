@@ -30,9 +30,19 @@
 						<input type="number" min="0" data-bind="value: quantity"/>
 					</td>
 					<td data-bind="text: subTotal"></td>
+					<td>
+						<!-- when we are inside the context of foreach , we are working
+						on an individual line , but removeLine is not defined on a line , 
+						its defined on the parent object the AppViewModal 
+						thats y we need $parent -->
+						<button data-bind="click: $parent.removeLine">Remove</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
+		<div>
+			<button data-bind="click: addLine">Add Item</button>
+		</div>
 	</div>
 </body>
 </html>

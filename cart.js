@@ -16,7 +16,16 @@ function OrderLine () {
 
 function AppViewModel () {
 	var self=this;
-	self.lines=[new OrderLine(),new OrderLine(),new OrderLine()];
+	self.lines=ko.observableArray([new OrderLine()]);
+
+	// i want to link it to a button in UI
+	self.addLine=function() {
+		self.lines.push(new OrderLine());
+	};
+
+	self.removeLine=function(line) {
+		self.lines.remove(line);
+	};
 
 }
 
