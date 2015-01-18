@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cart</title>
+	<script type="text/javascript" src="knockout-3.1.0.js"></script>
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="cart.js"></script>
+	<script type="text/javascript">
+		var MyApp={};
+		MyApp.AllProducts=[{name:"Moto E",price:6000 },{name:"Nokia Lumia",price:10000 },{name:"Moto G",price:12000 }];
+	</script>
+</head>
+<body>
+	<h1>Checkout</h1>
+	<div class="container">
+		<table class="cart table">
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>SubTotal</th>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: lines">
+				<tr>
+					<td>
+						<select data-bind="options: MyApp.AllProducts,optionsText: 'name',optionsCaption:'choose...',value: product"></select>
+					</td>
+					<td>
+						<input type="number" min="0" data-bind="value: quantity"/>
+					</td>
+					<td data-bind="text: subTotal"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
